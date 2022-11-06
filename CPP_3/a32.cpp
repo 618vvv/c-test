@@ -26,6 +26,5 @@ int main()
     cout<<"您的身高是"<<num_m<<" m "<<endl;
     cout<<"您的体重是"<<weight_k<<" kg "<<endl;
     cout<<"您的BMI是"<<weight_k/pow(num_m,2);
-    system("pause");
     return 0;
 }

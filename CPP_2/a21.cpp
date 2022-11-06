@@ -1,6 +1,5 @@
 //1．编写一个C++程序，它显示您的姓名和地址。
 
-#include <windows.h>
 #include<iostream>
 #include<string>
 using namespace std;
@@ -11,6 +10,5 @@ int main()
     string address="吉林省松原市";
     cout<<"我的名字是:"<<name<<endl;
     cout<<"我的地址是:"<<address<<endl;
-    system("pause");
     return 0;
 }

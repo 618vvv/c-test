@@ -12,6 +12,5 @@ int main()
     int num;
     cin>>num;
     cout<<"转换为码，结果为："<<num*220<<endl;
-    system("pause");
-    return 0;
+    return 0'
 }

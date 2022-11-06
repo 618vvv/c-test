@@ -5,7 +5,7 @@
 
 // 1英尺=12英寸
 
-/* 
+/*
 const使用
 https://blog.csdn.net/k5722166/article/details/85114068 */
 
@@ -16,13 +16,12 @@ const int num=12;
 
 int main()
 {
-    cout<<"请输入你的身高（单位为英寸）__\b\b\b:";
+    cout<<"请输入你的身高（单位为英寸）___\b\b\b:";
     int a,b,c;
     cin>>a;
     b=a/num;
     c=a%num;
     cout<<"身高为 "<<b<<" 英尺 "<<c<<" 英尺 "<<endl;
-    system("pause");
     return 0;
 
 }
