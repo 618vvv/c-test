@@ -16,12 +16,12 @@ Plorg类的所有特性。 */
 using namespace std;
 int main()
 {
-    Plorg	plorg;
+  Plorg	plorg;
 	plorg.show();
 	plorg.set(12);
 	plorg.show();
 }
-/* 
+/*
  g++ main.cpp plorg.cpp
   ./a.out
 输出样例：
