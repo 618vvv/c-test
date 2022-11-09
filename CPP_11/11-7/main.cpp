@@ -2,7 +2,10 @@
 #include "num.h"
 using namespace std;
  
- /*编译失败*/
+ /*
+ g++ main.cpp num.cpp
+ ./a.out
+ */
 int main()
 {
     Complex a(3.0, 4.0);     // initialize to (3,4i)
@@ -11,13 +14,13 @@ int main()
     while (cin >> c)
     {
         cout << "c is " << c << '\n';
-      /*   cout << "complex conjugate is " << ~c << '\n'; 
+        cout << "complex conjugate is " << ~c << '\n'; 
         cout << "a is " << a << '\n';
-        cout << "a + c is " << a + c << '\n';
+        cout << "a + c is " << a + c<< '\n';
         cout << "a - c is " << a - c << '\n'; 
         cout << "a * c is " << a * c << '\n'; 
         cout << "2 * c is " << 2 * c << '\n';
-        cout << "Enter a complex number (q to quit):\n";  */
+        cout << "Enter a complex number (q to quit):\n";  
     }
     cout << "Done!\n";
     return 0;

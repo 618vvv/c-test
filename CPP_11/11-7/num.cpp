@@ -1,39 +1,43 @@
 #include "num.h"
 using namespace std;
-Complex Complex::operator~()
+Complex::Complex(double a,double b)
 {
-    Complex b(real,-image);
-    return b;
+    real=a;
+    image=b;
 }
-Complex Complex::operator+(Complex &a)
+
+Complex Complex::operator~() const
 {
-    Complex b(a.real+real,a.image+image);
-    return b;
+    return Complex(real,-image);
+;
+}
+Complex Complex::operator+(const Complex &a)
+{
+   return Complex(a.real+real,a.image+image);
 }
 Complex Complex::operator*(Complex &a)
 {
-    Complex b(real*a.real-image*a.image,real*a.image+image*a.real);
-    return b;
+    return Complex(real*a.real-image*a.image,real*a.image+image*a.real);
 }
 Complex Complex::operator-(Complex &a)
 {
-    Complex b(a.real-real,a.image-image);
-    return b;
+    return Complex(a.real-real,a.image-image);
 }
-Complex operator*(double &a,Complex &b)
+Complex operator*(const double &a,const Complex &b)
 {
-    Complex c(a*b.real,a*b.image);
-    return c;
+    return Complex(a*b.real,a*b.image);
 }
-std::ostream & operator<<(std::ostream &os,Complex & a)
+std::ostream & operator<<(std::ostream &os, const Complex & a)
 {
     os<<"实数部分为"<<a.real<<endl;
     os<<"虚数部分为"<<a.image<<endl;
     return os;
-}
+} 
 std::istream & operator>>(std::istream &is,Complex & a)
 {
+    cout<<"请输入实数部分：";
     is>>a.real;
+    cout<<"请输入虚数部分：";
     is>>a.image;
     return is;
 }
