@@ -20,6 +20,7 @@ int main()
     unsigned long steps = 0;
     double target;
     double dstep;
+    int count=0;
     cout << "Enter target distance(q to quit):";
     while (cin >> target)
     {
@@ -36,7 +37,8 @@ int main()
             steps++;
             //step.reset(dstep, direction,Vector::RECT);
             step.rect_mode();
-            File<<step<<endl;
+            File<<count<<":"<<step<<endl;
+            count++;
 
         }
         File << "After " << steps << " steps,the subject has the following location:\n";
@@ -52,8 +54,8 @@ int main()
     cin.clear();
     while (cin.get() != '\n')
         continue;
-
-    system("pause");
+    File.close();   //关闭文件
+    //system("pause");
     return 0;
 }
 

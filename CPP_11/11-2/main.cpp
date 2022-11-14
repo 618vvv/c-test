@@ -11,7 +11,7 @@ int main()
     因为电脑取随机数是伪随机，只要种子一样，则取出来的数一定一样。
     这里用time(0)这个内函数，则是返回了当前的时间值，这样将使得种子为一个不固定的数，这样产生的随机数就不会每次执行都一样了
     srand()就是给rand()提供种子seed。如果srand每次输入的数值是一样的，那么每次运行产生的随机数也是一样的。*/
-    srand(time(0));    
+    srand(time(0));
     double direction;
     Vector step;
     Vector result(0.0, 0.0);
@@ -32,7 +32,7 @@ int main()
             result =result + step;
             steps++;
         }
-        cout << "After " << step << " steps,the subject has the following location:\n";
+        cout << "After " << steps << " steps,the subject has the following location:\n";
         cout << result << endl;
         result.polar_mode();
         cout << " or\n" << result << endl;
@@ -46,6 +46,6 @@ int main()
     while (cin.get() != '\n')
         continue;
 
-    system("pause");
+    //system("pause");
     return 0;
 }

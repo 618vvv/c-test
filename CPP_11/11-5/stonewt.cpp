@@ -52,15 +52,16 @@ Stonewt Stonewt::operator-(double a)
 }
 Stonewt Stonewt::operator*(double a)
 {
-	Stonewt b(total*a,ft);
-	return b;
+/* 	Stonewt b(total*a,ft);
+	return b; */
 	/*
 	这里为啥不对？？？？
+	*/
 	Stonewt b;
 	b.total=total*a;
 	b.ft=ft;
+	b.update();
 	return b;
-	*/
 }
 //友元函数
 Stonewt operator+(double n,Stonewt &a)

@@ -85,30 +85,30 @@ std::ostream & operator<<(std::ostream &os,Stonewt &a)
 }
  bool Stonewt::operator<(Stonewt &a)
  {
-	return stone<a.stone;
+	return pounds<a.pounds;
  }
 bool Stonewt::operator>(Stonewt &a)
 {
-	return stone>a.stone;
+	return pounds>a.pounds;
 
 }
 bool Stonewt::operator<=(Stonewt &a)
 {
-	return stone<=a.stone;
+	return pounds<=a.pounds;
 
 }
 bool Stonewt::operator>=(Stonewt &a)
 {
-	return stone>=a.stone;
+	return pounds>=a.pounds;
 
 }
 bool Stonewt::operator!=(Stonewt &a)
 {
-	return stone!=a.stone;
+	return pounds!=a.pounds;
 
 }
 bool Stonewt::operator==(Stonewt &a)
 {
-	return stone==a.stone;
+	return pounds==a.pounds;
 
 }

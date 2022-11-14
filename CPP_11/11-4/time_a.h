@@ -11,5 +11,7 @@ public:
     friend Time operator+(const Time &a,const Time &b);
     //重载之前为：Time Sum(const Time & t) const;
     //只要把运算符（这里为“+”）放到operator后面，并将结果用做方法名即可
-    void show() const;
+    friend Time operator-(const Time &a,const Time &b);
+    friend Time operator*(double a,const Time &b);
+    friend std::ostream & operator<<(std::ostream &os,const Time &a);
 };

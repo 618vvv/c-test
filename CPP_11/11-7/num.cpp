@@ -21,7 +21,7 @@ Complex Complex::operator*(Complex &a)
 }
 Complex Complex::operator-(Complex &a)
 {
-    return Complex(a.real-real,a.image-image);
+    return Complex(real-a.real,image-a.image);
 }
 Complex operator*(const double &a,const Complex &b)
 {
@@ -29,10 +29,13 @@ Complex operator*(const double &a,const Complex &b)
 }
 std::ostream & operator<<(std::ostream &os, const Complex & a)
 {
-    os<<"实数部分为"<<a.real<<endl;
-    os<<"虚数部分为"<<a.image<<endl;
+    if(a.image>=0)
+    os<<a.real<<"+"<<a.image<<"i"<<endl;
+    else
+    os<<a.real<<a.image<<"i"<<endl;
+
     return os;
-} 
+}
 std::istream & operator>>(std::istream &is,Complex & a)
 {
     cout<<"请输入实数部分：";

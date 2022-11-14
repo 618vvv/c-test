@@ -5,7 +5,9 @@
 
 int main()
 {
-    const int N=10;
+    int n=10;
+    cout<<"请输入n："<<endl;
+    cin>>a;
     using namespace std;
     using VECTOR::Vector;   //using声明
     /*给这个算法一个启动种子，也就是算法的随机种子数，有这个数以后才可以产生随机数。
@@ -27,7 +29,7 @@ int main()
     cin >> target;
     cout << "Enter step length:";
     cin>>dstep;
-    for(int i=0;i<N;i++)
+    for(int i=0;i<n;i++)
     {
         while (result.magval() < target)
         {
@@ -38,10 +40,8 @@ int main()
             steps++;
         }
         sumstep+=steps;
-        if(steps<minstep)
-        minstep=steps;
-        if(steps>maxstep)
-        maxstep=steps;
+        if(steps<minstep)minstep=steps;
+        if(steps>maxstep)maxstep=steps;
         cout << "After " << step << " steps,the subject has the following location:\n";
         cout << result << endl;
         result.polar_mode();
