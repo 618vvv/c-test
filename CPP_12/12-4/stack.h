@@ -11,13 +11,13 @@ private:
     int top;
 
 public:
-    Stack();
+    Stack(int n);
     Stack(const Stack &st);
     ~Stack();
     bool isempty() const;
     bool isfull() const;
     bool push(const Item &item);
-    bool pop(Item &item);
+    bool pop();
     Stack & operator=(const Stack &st);
     friend std::ostream & operator<<(std::ostream &os,const Stack &st);
 };

@@ -3,6 +3,20 @@
 
 using namespace std;
 
+/* 
+ g++ main.cpp string_h.cpp
+./a.out
+
+Please enter your name: Fertta Farbo
+My name is Fertta.
+The string
+MY NAME IS FERTTA AND I A
+contains 4 'A' characters in it.
+Enter the name of a primary color for mixing light: Try again!
+BLUE
+That's right!
+bye
+ */
 
 int main()
 {

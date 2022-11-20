@@ -24,7 +24,7 @@ int main()
 {
     Cow test1;
     Cow test2("Ginger ale", "Missing you", 80);
-    Cow test3 = test1;     //使用复制构造
+    Cow test3 (test1);     //使用复制构造
     test1.ShowCow();
     test2.ShowCow();
     test3.ShowCow();

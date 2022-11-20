@@ -9,6 +9,23 @@ const int MIN_PER_HR = 60;
 bool newcustomer(double x); // is there a new customer?
  
  //来自程序清单，queue.cpp自己写的
+//输入为：10 100 18
+/* 
+ g++ main.cpp queue.cpp
+ ./a.out
+
+ Case Study: Bank of Heather Automatic Teller
+Enter maximum size of queue: 10
+Enter the number of simulation hours: 100
+Enter the average number of customers per hour: 18
+customers accepted: 1872
+  customers served: 1872
+         turnaways: 0
+average queue size: 0.33
+ average wait time: 1.05 minutes
+Done!
+ */
+
 int main()
 {
     using std::cin;
@@ -99,18 +116,3 @@ bool newcustomer(double x)
     return (std::rand() * x / RAND_MAX < 1); 
 }
 
-/* 
- g++ main.cpp queue.cpp
- ./a.out
-
- Case Study: Bank of Heather Automatic Teller
-Enter maximum size of queue: 10
-Enter the number of simulation hours: 100
-Enter the average number of customers per hour: 18
-customers accepted: 1872
-  customers served: 1872
-         turnaways: 0
-average queue size: 0.33
- average wait time: 1.05 minutes
-Done!
- */

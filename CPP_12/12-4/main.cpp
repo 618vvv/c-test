@@ -4,17 +4,18 @@
 int main()
 {
     using namespace std;
-    Stack st;
+    Stack st(1);
     Item temp = 1000UL;
     st.push(temp);
-    cout<<st;
     temp = 2000UL;
     st.push(temp);
     temp = 3000UL;
     st.push(temp);
     Stack st1(st);
-    Stack st2;
+    Stack st2(2);
     st2 = st;
+    st2.pop();
+    st2.pop();
     cout << "Here are some stack contents:" << endl;
     cout << "Stack st:" << endl;
     cout << st;

@@ -2,11 +2,11 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-    Stack::Stack()
+    Stack::Stack(int n)
     {
-        size=MAX;
-        pitems=new Item[size];
-        for(int i=0;i<size;i++)pitems[i]=0;
+        size=n;
+        pitems=new Item[n];
+        for(int i=0;i<n;i++)pitems[i]=0;
         top=0;
     }
     Stack::Stack(const Stack &st)
@@ -31,11 +31,12 @@ using namespace std;
     bool Stack::push(const Item &item)
     {
         if(isfull())return false;
+        if(top==size) size++;
         pitems[top]=item;
         top++;
         return true;
     }
-    bool Stack::pop(Item &item)
+    bool Stack::pop()
     {
         if(isempty())return false;
         top--;
@@ -52,7 +53,7 @@ using namespace std;
     }
     std::ostream & operator<<(std::ostream &os,const Stack &st)
     {
-        for(int i=0;i<st.size;i++)os<<i<<":"<<st.pitems[i]<<endl;
+        for(int i=0;i<st.top;i++)os<<i<<":"<<st.pitems[i]<<endl;
         os<<"top的值："<<st.top<<endl;
         return os;
     }

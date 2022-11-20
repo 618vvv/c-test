@@ -40,9 +40,9 @@ using namespace std;
 
         }
         void Cow::ShowCow() const //display all cow data
-        {
+        {       cout<<endl;
                 cout<<"名字是："<<name<<endl;
-                cout<<"爱好是："<<*hobby<<endl;
+                cout<<"爱好是："<<hobby<<endl;
                 cout<<"体重是："<<weight<<endl;
         }
 

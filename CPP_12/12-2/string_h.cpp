@@ -32,14 +32,11 @@ int String::num_strings = 0;
     //输入 输出 友元函数
     std::ostream & operator<<(std::ostream &os,const String &a)
     {
-            os<<"字符串为："<<a.str<<endl;
-            os<<"长度为："<<a.len<<endl;
-            os<<"当前对象个数为："<<String::num_strings<<endl;
+            os<<a.str;
             return os;
     }
     std::istream & operator>>(std::istream &is,String &a)
     {
-        cout<<endl<<"请输入对象的str:";
         is>>a.str;
         a.len=strlen(a.str)+1;
     }
