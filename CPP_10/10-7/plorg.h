@@ -8,7 +8,7 @@ class Plorg
         int CI;
     public:
     //构造函数
-        Plorg(){strcpy(name,"Plorga"); CI=50;}
+        Plorg(char p_name[Len]=(char*)"Plorga",int p_CI=50);
         void show() const;
         void set(int a);
 

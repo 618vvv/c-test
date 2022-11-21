@@ -3,7 +3,7 @@
     //添加成员
         int Tlist::add(uItem & item)
         {
-            if(top<20)
+            if(!isfull())
             {
                 items[top]=item;
                 top++;
@@ -15,11 +15,11 @@
         bool Tlist::isempty()
         {
             return top==0;
-        }    
+        }
     //判断是否满了
         bool Tlist::isfull()
         {
-            return top==19;
+            return top==MAX;
         }
     //
         void Tlist::visit(void(*pf)(uItem &))
@@ -31,7 +31,7 @@
             }
         }
     //求/2
-        void half(uItem &item) 
+        void half(uItem &item)
         {
             item=item/2;
             cout<<item<<endl;

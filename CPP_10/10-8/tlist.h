@@ -3,7 +3,8 @@ using namespace std;
 typedef int uItem;
 class Tlist{
     private:
-        uItem items[20];
+        static const int MAX = 20;
+        uItem items[MAx];
         int top;
     public:
     //构造函数

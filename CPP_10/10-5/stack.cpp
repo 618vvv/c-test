@@ -7,13 +7,13 @@ bool Stack::isEmpty() const
 }
 bool Stack::isFull() const
 {
-    return top==10;
+    return top==MAX;   //定义了一个存储容量的变量
 }
-bool Stack::pop(Item a)
+bool Stack::pop(Item &a)   //传入的应该是引用 不然不会改变参数的值
 {
-    if(top<=0)
+    if(top==0)
         return false;
-    else 
+    else
     {
         a=items[top];
         top--;
@@ -26,8 +26,8 @@ bool Stack::push(Item a)
         return false;
     else
     {
+        items[top]=a;   //修改
         top++;
-        items[top]=a;
     }
-    return true;     
+    return true;
 }

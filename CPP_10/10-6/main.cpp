@@ -12,6 +12,8 @@ int main()
     a.showMove();
     a.reset(43,645);
     a.showMove();
+    Move b = a.add(v);
+    b.showMove();
     return 0;
 }
 

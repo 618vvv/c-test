@@ -14,7 +14,7 @@ int main()
     for(int i=0;i<5;i++)
     {
         sc.push(c[i]);
-        cout<<c[i].fullname<<" "<<c[i].payment<<endl; 
+        cout<<c[i].fullname<<" "<<c[i].payment<<endl;
     }
         for(int i=0;i<5;i++)
     {
@@ -22,10 +22,10 @@ int main()
         sum+=s[i].payment;
         cout<<sum<<endl;
     }
-    
+
 }
 
-/* 
+/*
 g++ main.cpp stack.cpp
 ./a.out
 输出样例：

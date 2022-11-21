@@ -10,3 +10,8 @@ void Plorg::set(int a)
 {
     CI=a;
 }
+Plorg::Plorg(char *p_name,int p_CI)
+{
+    strcpy(name,p_name);
+    p_CI=CI;
+}
