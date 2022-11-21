@@ -26,20 +26,21 @@ using namespace std;
     }
     bool Stack::isfull() const
     {
-        return top==10;
+        return top==size;
     }
     bool Stack::push(const Item &item)
     {
         if(isfull())return false;
-        if(top==size) size++;
         pitems[top]=item;
         top++;
         return true;
     }
-    bool Stack::pop()
+    bool Stack::pop( Item &item)
     {
         if(isempty())return false;
+        item=pitems[top];
         top--;
+        return item;
     }
     Stack & Stack::operator=(const Stack &st)
     {
@@ -55,5 +56,6 @@ using namespace std;
     {
         for(int i=0;i<st.top;i++)os<<i<<":"<<st.pitems[i]<<endl;
         os<<"top的值："<<st.top<<endl;
+        os<<"size的值："<<st.size<<endl;
         return os;
     }

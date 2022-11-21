@@ -1,5 +1,6 @@
 #include<iostream>
 #include "string_h.h"
+#include<cctype>
 using namespace std;
 int String::num_strings = 0;
     String::String()
@@ -37,8 +38,11 @@ int String::num_strings = 0;
     }
     std::istream & operator>>(std::istream &is,String &a)
     {
-        is>>a.str;
-        a.len=strlen(a.str)+1;
+        char temp[String::CINLIM];
+        is.get(temp,String::CINLIM);
+        if(is)  a=temp;//调用了重载运算符？？？
+        while(is && is.get()!='\n') continue;  //用于过滤换行符
+        return is;
     }
     //重载赋值运算符
     String & String::operator=(const String & a)
@@ -70,16 +74,14 @@ int String::num_strings = 0;
     {
         for(int i=0;i<len;i++)
         {
-            if(str[i]>=65&&str[i]<=90)
-            str[i]+=32;
+            str[i]=tolower(str[i]);
         }
     }
     void String::Stringup()
     {
         for(int i=0;i<len;i++)
         {
-            if(str[i]>=97&&str[i]<=122)
-            str[i]-=32;
+            str[i]=toupper(str[i]);
         }
 
     }
@@ -95,6 +97,7 @@ int String::num_strings = 0;
     }
 bool String::operator==(const String &a) const
     {
+        if(strlen(a.str)!=strlen(str)) return false;
         for(int i=0;i<len;i++)
         {
             if(str[i]!=a.str[i])

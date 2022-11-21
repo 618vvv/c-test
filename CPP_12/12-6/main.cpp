@@ -3,12 +3,12 @@
 #include <ctime>   // for time()
 #include "queue.h"
 const int MIN_PER_HR = 60;
- 
+
 bool newcustomer(double x); // is there a new customer?
- 
+
  //对12-5的main.cpp进行修改
 
- /* 
+ /*
  g++ main.cpp queue.cpp
  ./a.out
 
@@ -30,25 +30,25 @@ int main()
     using std::endl;
     using std::ios_base;
 // setting things up
-    std::srand(std::time(0));   
+    std::srand(std::time(0));
     cout << "Case Study: Bank of Heather Automatic Teller\n";
     cout << "Enter maximum size of queue: ";
     int qs;
     cin >> qs;
-    Queue line1(qs); 
-    Queue line2(qs);       
+    Queue line1(qs);
+    Queue line2(qs);
     cout << "Enter the number of simulation hours: ";
-    int hours;             
+    int hours;
     cin >> hours;
     // simulation will run 1 cycle per minute
     long cyclelimit = MIN_PER_HR * hours; // # of cycles
- 
+
     cout << "Enter the average number of customers per hour: ";
     double perhour;         //  average # of arrival per hour
     cin >> perhour;
     double min_per_cust;    //  average time between arrivals
     min_per_cust = MIN_PER_HR / perhour;
- 
+
     Item temp;              //  new customer data
     long turnaways = 0;     //  turned away by full queue
     long customers = 0;     //  joined the queue
@@ -58,7 +58,7 @@ int main()
     long line1_wait = 0;     //  cumulative time in line
     int wait2_time = 0;      //  time until autoteller is free
     long line2_wait = 0;     //  cumulative time in line
- 
+
 // running the simulation
     for (int cycle = 0; cycle < cyclelimit; cycle++)
     {
@@ -66,7 +66,7 @@ int main()
         {
             if (line1.isfull()&&line2.isfull())
                 turnaways++;
-            else if(line2>line1||line1.isfull())
+            else if(line2>line1)
             {
                 customers++;
                 temp.set(cycle);    // cycle = time of arrival
@@ -99,7 +99,7 @@ int main()
         sum_line += line2.queuecount();
 
     }
- 
+
 // reporting results
     if (customers > 0)
     {
@@ -120,11 +120,11 @@ int main()
     // cin.get();
     return 0;
 }
- 
+
 //  x = average time, in minutes, between customers
 //  return value is true if customer shows up this minute
 bool newcustomer(double x)
 {
-    return (std::rand() * x / RAND_MAX < 2); 
+    return (std::rand() * x / RAND_MAX < 1);
 }
 

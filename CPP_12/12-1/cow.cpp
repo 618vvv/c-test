@@ -4,7 +4,7 @@
 using namespace std;
         Cow::Cow(){
             name[0] = '\0';
-            hobby = new char[4];
+            hobby = new char[5];  //除了null之外还要有反义字符
             strcpy(hobby, "null");
             weight = 0;
             } //构造函数
@@ -32,10 +32,11 @@ using namespace std;
         {
             if(this==&c) //if(*this==c)
                 return *this;
+            delete [] hobby;  //释放之前申请的空间
             strcpy(name,c.name);
             hobby=new char(strlen(c.hobby)+1);
             strcpy(hobby,c.hobby);
-            weight=c.weight;weight;
+            weight=c.weight;
             return *this;
 
         }

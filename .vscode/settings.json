@@ -61,5 +61,6 @@
         "set": "cpp",
         "string_view": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "ros.distro": "melodic"
 }

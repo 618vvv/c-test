@@ -1,6 +1,6 @@
 #include "queue.h"
 #include<iostream>
-#include <cstdlib>  
+#include <cstdlib>
 using namespace std;
 Queue::Queue(int qs):qsize(qs) // create queue with a qs limit
 {
@@ -37,17 +37,15 @@ bool Queue::enqueue(const Item &item) // add item to end
     add->item=item;
     add->next=NULL;
     items++;
-    if(front==NULL)
-        front=add;
-    else
-        rear->next=add;
-        rear=add;
+    if(front==NULL)front=add;
+    else rear->next=add;
+    rear=add;
     return true;
-    
+
 }
 bool Queue::dequeue(Item &item)      // remove item from front
 {
-    if(isempty()==0)false;
+    if(isempty()==0)return false;
     item=front->item;
     items--;
     Node *temp=front;
@@ -60,5 +58,5 @@ bool Queue::dequeue(Item &item)      // remove item from front
 void Customer::set(long when)
 {
     processtime = std::rand() % 3 + 1;
-    arrive = when; 
+    arrive = when;
 }
