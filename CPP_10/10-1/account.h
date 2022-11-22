@@ -15,6 +15,6 @@ public:
     //存入参数指定的存款
     void save(double money_b);
     //取出参数指定的款项
-    void remove() const;
+    void remove(double money_b);
     void show() const;
 };

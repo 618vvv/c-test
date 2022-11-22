@@ -20,15 +20,20 @@ Bank::Bank(string name_b,string account_num_b,double money_b)
 }
 void Bank::save(double money_b)
 {
-    money=money_b;
+    money+=money_b;   //存入指定的存款应该是money+存入的钱吧,不应该直接覆盖
 }
-void Bank::remove() const
+void Bank::remove(double money_b)
 {
-    cout<<(*this).name<<"的存款是"<<money<<endl;
+    while(money_b>money)
+    {
+        cout<<"当前金额不足！请重试:";
+        cin>>money_b;
+    }
+    money-=money_b;
 }
 void Bank::show() const
 {
-    cout<<name<<endl;
-    cout<<account_num<<endl;
-    cout<<money<<endl;
+    cout<<"名字为："<<name;
+    cout<<"，账户为："<<account_num;
+    cout<<"，金额为："<<money<<endl;
 }

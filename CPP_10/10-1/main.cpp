@@ -5,7 +5,7 @@
 存入参数指定的存款；
 取出参数指定的款项。 */
 
-/* 
+/*
 g++ main.cpp account.cpp
 ./a.out
 
@@ -14,7 +14,7 @@ Liminig
 542352
 55500
 Liminig的存款是200
-bye 
+bye
 */
 
 #include <iostream>
@@ -27,7 +27,11 @@ int main()
     Bank a=Bank("Liminig","542352",55500);
     a.show();
     a.save(200);
-    a.remove();
+    double m;
+    cout<<"请输入要取出的金额:";
+    cin>>m;
+    a.remove(m);
+    a.show();
     }
     return 0;
 }

@@ -1,4 +1,5 @@
     const int QUARTERS = 4;
+namespace SALES{
     class Sales
     {
         private:
@@ -8,6 +9,7 @@
             double min;
         public:
             void showSales() const;
-            Sales(){for(int i=0;i<QUARTERS;i++) sales[i]=0.0; average=0.0;max=0.0;min=0.0;}
-            Sales(double * sales_s,double average_s,double max_s,double min_s);
+            Sales(const double ar[],int n);
+            Sales();
     };
+};

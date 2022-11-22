@@ -6,17 +6,18 @@
 #include<iostream>
 #include"namesp.h"
 using namespace std;
+using namespace SALES;
 int main()
 {
-    double s[QUARTERS];
+    double s[QUARTERS]={0,1,2,3};
     double average_m,max_m,min_m;
 	Sales s1;
-    Sales s2(s,average_m,max_m,min_m);
+    Sales s2(s,QUARTERS);
     s1.showSales();
     s2.showSales();
 	return 0;
 }
-/* 
+/*
 g++ namesp.cpp main.cpp
 ./a.out
 输出样例：

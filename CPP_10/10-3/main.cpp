@@ -1,8 +1,8 @@
-#include<iostream>
+  #include<iostream>
 #include<string>
 #include "golf.h"
 using namespace std;
-/* 
+/*
 g++ golf.cpp main.cpp
 ./a.out
 输出样例：
